@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: wuar-demo-ykex
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: wuar-demo-ykex
+    app.kubernetes.io/part-of: my-wildfly-app
+  name: wuar-demo-ykex
+  namespace: jmesnil1-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: wuar-demo-ykex
+    weight: null
+status: {}
